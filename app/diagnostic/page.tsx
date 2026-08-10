@@ -47,8 +47,19 @@ export default function DiagnosticPage() {
             .
           </>
         }
-        primaryCta={{ href: WHATSAPP_ASSESS_URL, label: CTA_ASSESS_LABEL, external: true }}
-        secondaryCta={{ href: WHATSAPP_DISCUSS_URL, label: CTA_DISCUSS_LABEL, external: true }}
+        primaryCta={{
+          href: WHATSAPP_ASSESS_URL,
+          label: CTA_ASSESS_LABEL,
+          external: true,
+          ctaLocation: "diagnostic_primary",
+          octusEvent: "diagnostic_click",
+        }}
+        secondaryCta={{
+          href: WHATSAPP_DISCUSS_URL,
+          label: CTA_DISCUSS_LABEL,
+          external: true,
+          ctaLocation: "diagnostic_secondary",
+        }}
       />
 
       <section className="bg-background py-24 md:py-32">
@@ -78,7 +89,10 @@ export default function DiagnosticPage() {
           </p>
           <p className="body-large mb-8">
             Prefer email? Write to{" "}
-            <a href={MAILTO_INFO} className="text-primary underline-offset-4 hover:underline">
+            <a href={MAILTO_INFO} className="text-primary underline-offset-4 hover:underline"
+              data-cta-location="diagnostic_email"
+              data-cta-label="info@octusconsulting.com"
+            >
               info@octusconsulting.com
             </a>
             .

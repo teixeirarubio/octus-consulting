@@ -1,11 +1,13 @@
 import { pageSocialMeta } from "../../lib/pageMeta";
+import CookiePreferencesButton from "../../components/CookiePreferencesButton";
+
 export const metadata = pageSocialMeta({
   title: "Cookie Policy",
   description:
-    
-    "Cookie and browser storage practices for the Octus Consulting website, covering essential site functions and preference handling.",
+    "Cookie and browser storage practices for the Octus Consulting website, including necessary cookies and optional analytics consent.",
   path: "/cookies",
 });
+
 export default function CookiesPage() {
   return (
     <main>
@@ -21,19 +23,23 @@ export default function CookiesPage() {
           {[
             {
               title: "What are cookies",
-              body: "Cookies are small text files stored on your device when you visit a website. Similar browser storage (such as localStorage) may also be used for essential site functions.",
+              body: "Cookies are small text files stored on your device when you visit a website. Similar browser storage (such as localStorage) may also be used for essential site functions and to remember your cookie preferences.",
             },
             {
-              title: "What we use today",
-              body: "As of this update, the public site is a static export. The only first-party preference we set in the browser is a localStorage flag recording that you dismissed the essential-cookie notice (aligned with the on-site CookieBanner). We do not load Meta Pixel, advertising SDKs, or other advertising trackers on this site.",
+              title: "Necessary cookies and storage",
+              body: "Necessary storage is always enabled. It supports basic site operation and remembers your cookie preference decision (Accept all, Reject non-essential, or a custom choice). This preference is stored in first-party localStorage under octus-consent-v2.",
             },
             {
-              title: "Analytics preparation",
-              body: "We may enable aggregate performance and indexing tools (such as Vercel Web Analytics and Google Search Console) in production later. When those tools are activated, this policy and the Privacy Policy will be updated to describe any cookies or similar technologies they set. This page does not invent consent conclusions for every jurisdiction.",
+              title: "Optional analytics",
+              body: "Analytics are disabled by default. When Octus has configured production measurement IDs (Google Tag Manager, with GA4 loaded through GTM) and you grant analytics consent, aggregate traffic measurement may run only on octusconsulting.com and www.octusconsulting.com. Analytics do not load on localhost, preview hosts, or *.vercel.app. If measurement IDs are absent, analytics tags are not active even if you select Accept all — the preference is stored for when IDs are later provided.",
+            },
+            {
+              title: "What we do not use",
+              body: "We do not load Meta Pixel, LinkedIn Insight Tag, or other advertising / personalization tags on this site. Consent Mode keeps ad_storage, ad_user_data and ad_personalization denied.",
             },
             {
               title: "Managing preferences",
-              body: "You can clear site data through your browser settings. Disabling storage may cause the cookie notice to reappear. Essential site pages remain available without advertising cookies. Persistence of the dismiss flag depends on your browser storage remaining available.",
+              body: "Use Accept all, Reject non-essential, or Manage preferences on the cookie banner. You can reopen preferences from the site footer (“Cookie preferences”) or via the control on this page. You can also clear site data in your browser; clearing storage may show the banner again.",
             },
             {
               title: "Contact",
@@ -45,6 +51,9 @@ export default function CookiesPage() {
               <p className="body-text">{s.body}</p>
             </div>
           ))}
+          <p className="body-text" style={{ marginTop: "8px" }}>
+            <CookiePreferencesButton className="cookie-prefs-btn text-primary" />
+          </p>
         </div>
       </section>
     </main>

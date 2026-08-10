@@ -10,6 +10,8 @@ type Cta = {
   variant?: "on-dark" | "on-dark-secondary";
   /** Quiet text link instead of a second equal button. */
   quiet?: boolean;
+  ctaLocation?: string;
+  octusEvent?: string;
 };
 
 export default function PageHero({
@@ -58,6 +60,11 @@ export default function PageHero({
               <CtaLink
                 href={primaryCta.href}
                 variant={primaryCta.variant || "on-dark"}
+                data-cta-location={primaryCta.ctaLocation || "page_hero_primary"}
+                data-cta-label={primaryCta.label}
+                {...(primaryCta.octusEvent
+                  ? { "data-octus-event": primaryCta.octusEvent }
+                  : {})}
                 {...(primaryCta.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
@@ -70,6 +77,11 @@ export default function PageHero({
                 <a
                   href={secondaryCta.href}
                   className="inline-flex min-h-11 items-center font-sans text-sm text-white/65 no-underline transition-colors hover:text-white"
+                  data-cta-location={secondaryCta.ctaLocation || "page_hero_secondary"}
+                  data-cta-label={secondaryCta.label}
+                  {...(secondaryCta.octusEvent
+                    ? { "data-octus-event": secondaryCta.octusEvent }
+                    : {})}
                   {...(secondaryCta.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
@@ -80,6 +92,11 @@ export default function PageHero({
                 <CtaLink
                   href={secondaryCta.href}
                   variant={secondaryCta.variant || "on-dark-secondary"}
+                  data-cta-location={secondaryCta.ctaLocation || "page_hero_secondary"}
+                  data-cta-label={secondaryCta.label}
+                  {...(secondaryCta.octusEvent
+                    ? { "data-octus-event": secondaryCta.octusEvent }
+                    : {})}
                   {...(secondaryCta.external
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}

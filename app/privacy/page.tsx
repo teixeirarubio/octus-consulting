@@ -14,7 +14,7 @@ const sections = [
   },
   {
     title: "What data we collect",
-    body: `We collect personal data you provide directly when interacting with our website or contacting us:\n\n• Identification and contact information: name, company name, job title, email address, phone number.\n• Operational context: jurisdiction of operation, type of regulated business, and any information you choose to share when you contact us.\n• Communications: the content of emails, WhatsApp messages or other messages you send to us.\n\nAs of this update, the public website does not host an HTML contact form that posts data to our servers. Primary contact channels are WhatsApp and email (mailto). We do not invent website usage analytics collection that is not active on the current static export. If analytics tools are enabled later, this policy and the Cookie Policy will be updated.\n\nWe do not collect sensitive personal data (such as health information, racial or ethnic origin, or biometric data) in the ordinary course of our business.`,
+    body: `We collect personal data you provide directly when interacting with our website or contacting us:\n\n• Identification and contact information: name, company name, job title, email address, phone number.\n• Operational context: jurisdiction of operation, type of regulated business, and any information you choose to share when you contact us.\n• Communications: the content of emails, WhatsApp messages or other messages you send to us.\n\nAs of this update, the public website does not host an HTML contact form that posts data to our servers. Primary contact channels are WhatsApp and email (mailto).\n\nOptional website analytics may collect aggregate usage signals (such as page path and CTA interaction events) only when: (1) production measurement IDs are configured by Octus, (2) you are on octusconsulting.com or www.octusconsulting.com, and (3) you have granted analytics consent. Analytics are off by default. We do not invent active analytics collection when those conditions are not met.\n\nWe do not collect sensitive personal data (such as health information, racial or ethnic origin, or biometric data) in the ordinary course of our business.`,
   },
   {
     title: "How we use your data",
@@ -42,7 +42,7 @@ const sections = [
   },
   {
     title: "Cookies",
-    body: `Our website uses essential site functions only as of this update. The public site sets a first-party localStorage flag when you dismiss the essential-cookie notice. We do not currently load advertising SDKs or Meta Pixel. For full details, see our Cookie Policy, which is aligned with the on-site CookieBanner.`,
+    body: `The website uses necessary first-party storage for basic operation and to remember your cookie preference. Optional analytics (Google Tag Manager orchestrating GA4) load only after you grant analytics consent, only on the production hosts octusconsulting.com / www.octusconsulting.com, and only when Octus has configured the required environment IDs. Advertising and personalization tags are not used; related Consent Mode signals remain denied. For full details and to reopen preferences, see our Cookie Policy.`,
   },
   {
     title: "Data protection contact",

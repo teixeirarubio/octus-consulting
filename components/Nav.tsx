@@ -188,6 +188,8 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               className={ctaClass}
+              data-cta-location="navigation"
+              data-cta-label={CTA_DISCUSS_LABEL}
             >
               {CTA_DISCUSS_LABEL}
             </a>
@@ -264,6 +266,8 @@ export default function Nav() {
               rel="noopener noreferrer"
               className={ctaClass + " mt-6 justify-center"}
               onClick={() => setMobileOpen(false)}
+              data-cta-location="navigation_mobile"
+              data-cta-label={CTA_DISCUSS_LABEL}
             >
               {CTA_DISCUSS_LABEL}
             </a>

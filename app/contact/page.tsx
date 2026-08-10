@@ -37,13 +37,20 @@ export default function ContactPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-sm bg-white px-10 text-base font-medium tracking-wide text-primary transition-colors hover:bg-white/90"
+              data-cta-location="contact_primary"
+              data-cta-label={CTA_DISCUSS_LABEL}
             >
               {CTA_DISCUSS_LABEL}
             </a>
           </div>
           <p className="mt-6 font-sans text-sm text-white/50">
             Prefer email?{" "}
-            <a href={MAILTO_DISCUSS} className="text-white/75 underline-offset-2 hover:underline">
+            <a
+              href={MAILTO_DISCUSS}
+              className="text-white/75 underline-offset-2 hover:underline"
+              data-cta-location="contact_email"
+              data-cta-label={OCTUS_EMAIL}
+            >
               {OCTUS_EMAIL}
             </a>
           </p>
